@@ -1,0 +1,7 @@
+dimod
+pyscf
+openfermion
+symengine
+qiskit-nature[pyscf]
+qiskit
+dwave-ocean-sdk
