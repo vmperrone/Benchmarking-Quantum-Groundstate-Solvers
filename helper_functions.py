@@ -12,7 +12,20 @@ from openfermion.ops import QubitOperator
 from openfermion.utils import count_qubits
 from openfermion.transforms import taper_off_qubits
 
+##OPENFERMION
+from openfermionpyscf import run_pyscf
+from openfermion.transforms import binary_code_transform, bravyi_kitaev_code, get_fermion_operator
+from openfermion.ops import FermionOperator, QubitOperator
+from openfermion.utils import count_qubits
+from openfermion.chem import MolecularData
+from openfermion.transforms import get_fermion_operator, jordan_wigner
+from openfermion.linalg import get_ground_state, get_sparse_operator
+import numpy
+import scipy
+import scipy.linalg
 
+##Qiskit
+from qiskit_nature.operators.second_quantization import FermionicOp
 
 '''
 Helper functions to construct Pauli operator Hamiltonian
@@ -356,3 +369,37 @@ def qubit_op_to_expr(qubit_op, angle_folds=0):
                     term *= se.Symbol('Z'+str(num))
         expr += term
     return expr
+
+
+#Converts Fermionic operators between Qiskit and OpenFermion
+def qiskit2of_fermionicOp(q_fermionic_op):
+    q_fermionic_op_list = q_fermionic_op.to_list()
+    of_fermionic_op = FermionOperator()
+    for term in q_fermionic_op_list:
+        of_term_coeff = term[1]
+        of_term_ops = ""
+        for op in range(0,len(term[0]),4):
+            q_term_op = term[0][op:op+4]
+            if q_term_op[0] == "+":
+                of_term_op = q_term_op[2] + "^"
+            else:
+                of_term_op = q_term_op[2]
+            of_term_ops += " " + of_term_op
+        of_fermionic_op += FermionOperator(of_term_ops[1:], of_term_coeff)
+    return of_fermionic_op
+
+def of2qiskit_fermionicOp(of_fermionic_op):
+    of_fermionic_op_list = of_fermionic_op.terms.items()
+    q_fermionic_op = []
+    for term in of_fermionic_op_list:
+        q_term_coeff = term[1]
+        q_term_ops = ""
+        for op in range(len(term[0])):
+            of_term_op = str(term[0][op][0])
+            if term[0][op][1] == 0:
+                q_term_op = "-_" + of_term_op
+            else:
+                q_term_op = "+_" + of_term_op
+            q_term_ops += " " + q_term_op
+        q_fermionic_op.append((q_term_ops, q_term_coeff))
+    return FermionicOp(q_fermionic_op, display_format="sparse", register_length=4)
