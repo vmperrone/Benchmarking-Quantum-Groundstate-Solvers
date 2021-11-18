@@ -388,7 +388,7 @@ def qiskit2of_fermionicOp(q_fermionic_op):
         of_fermionic_op += FermionOperator(of_term_ops[1:], of_term_coeff)
     return of_fermionic_op
 
-def of2qiskit_fermionicOp(of_fermionic_op):
+def of2qiskit_fermionicOp(of_fermionic_op, register_length):
     of_fermionic_op_list = of_fermionic_op.terms.items()
     q_fermionic_op = []
     for term in of_fermionic_op_list:
@@ -402,4 +402,4 @@ def of2qiskit_fermionicOp(of_fermionic_op):
                 q_term_op = "+_" + of_term_op
             q_term_ops += " " + q_term_op
         q_fermionic_op.append((q_term_ops, q_term_coeff))
-    return FermionicOp(q_fermionic_op, display_format="sparse", register_length=4)
+    return FermionicOp(q_fermionic_op, display_format="sparse", register_length=register_length)
