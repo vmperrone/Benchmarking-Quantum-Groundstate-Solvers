@@ -78,12 +78,17 @@ def minimize_expr(expr, angle_folds, amplitude_folds, sampler, max_cycles=5, num
             disc_expr = disc_expr.subs(cont_vars[i], cont_vals[i])
         
         disc_expr = se.expand(disc_expr)
+        # print(disc_expr)
+        # print(cont_expr)
         bqm = dimod.higherorder.utils.make_quadratic(expr_to_dict(disc_expr), strength, dimod.SPIN)
+        # print(bqm)
         qubo, constant = bqm.to_qubo()
+        # print(qubo)
         
         #run sampler
         response = sampler.sample_qubo(qubo,num_reads=num_samples)
         solutions = pd.DataFrame(response.data())
+        # print(solutions.head())
         minIndex = int(solutions[['energy']].idxmin())
         minEnergy = round(solutions['energy'][minIndex],12) + constant
         unredSolution = solutions['sample'][minIndex]
@@ -107,7 +112,7 @@ def minimize_expr(expr, angle_folds, amplitude_folds, sampler, max_cycles=5, num
     cont_dict = dict(zip(cont_vars, all_cont_vals[index]))
     disc_dict = dict(zip(disc_vars, all_disc_vals[index]))
     
-    return min_energy, cont_dict, disc_dict
+    return min_energy, cont_dict, disc_dict, min_energies
 
 
 
@@ -198,7 +203,7 @@ def QCC(qubit_H, entanglers, angle_folds, amplitude_folds, sampler,
 
 
     #minimize QCC expression
-    QCC_energy, cont_dict, disc_dict = minimize_expr(expr, angle_folds, amplitude_folds, sampler,
+    QCC_energy, cont_dict, disc_dict, min_energies = minimize_expr(expr, angle_folds, amplitude_folds, sampler,
         max_cycles=num_cycles, num_samples=num_samples, strength=strength, verbose=verbose)
 
 
@@ -246,4 +251,4 @@ def QCC(qubit_H, entanglers, angle_folds, amplitude_folds, sampler,
                 except KeyError:
                     pass
     
-    return QCC_energy, cont_dict
+    return QCC_energy, cont_dict, min_energies

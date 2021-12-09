@@ -113,10 +113,12 @@ def XBK(qubit_Hs, qubit_Cs, r, sampler, starting_lam=0, num_samples=1000, streng
         while min_energy < 0 and cycles < 10:
             #subtract lambda C from H
             H_prime = qubit_H - lam*qubit_C
-            
+            # print(H_prime)
             #construct qubo from reduced Hamiltonian
             bqm = dimod.higherorder.utils.make_quadratic(convert_dict(H_prime.terms), strength, dimod.SPIN)
+            # print(bqm)
             qubo, constant = bqm.to_qubo()
+            # print(qubo)
             
             if qubo == {}:
                 break
@@ -124,7 +126,7 @@ def XBK(qubit_Hs, qubit_Cs, r, sampler, starting_lam=0, num_samples=1000, streng
             #run sampler
             response = sampler.sample_qubo(qubo,num_reads=num_samples)
             solutions = pd.DataFrame(response.data())
-
+            # print(solutions.head())
             #get mininum energy solution
             index = int(solutions[['energy']].idxmin())
             min_energy = round(solutions['energy'][index], 14) + constant
@@ -157,6 +159,8 @@ def XBK(qubit_Hs, qubit_Cs, r, sampler, starting_lam=0, num_samples=1000, streng
                 lam = eigenvalue
                 ground_state = [(val+1)//2 for val in solution]
             cycles += 1
+
+            # print(min_energy, cycles, ground_state)
         
         min_energies += [round(lam, 14)]
         ground_states += [ground_state]
@@ -171,4 +175,4 @@ def XBK(qubit_Hs, qubit_Cs, r, sampler, starting_lam=0, num_samples=1000, streng
     if verbose:
         print('Energy:', round(min_energy, 5))
     
-    return min_energy, ground_state
+    return min_energy, ground_state, min_energies
