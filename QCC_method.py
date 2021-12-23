@@ -86,7 +86,8 @@ def minimize_expr(expr, angle_folds, amplitude_folds, sampler, max_cycles=5, num
         # print(qubo)
         
         #run sampler
-        response = sampler.sample_qubo(qubo,num_reads=num_samples)
+        # response = sampler.sample_qubo(qubo,num_reads=num_samples)
+        response = sampler.sample_qubo(qubo)
         solutions = pd.DataFrame(response.data())
         # print(solutions.head())
         minIndex = int(solutions[['energy']].idxmin())

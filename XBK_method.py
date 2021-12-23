@@ -124,7 +124,8 @@ def XBK(qubit_Hs, qubit_Cs, r, sampler, starting_lam=0, num_samples=1000, streng
                 break
             
             #run sampler
-            response = sampler.sample_qubo(qubo,num_reads=num_samples)
+            # response = sampler.sample_qubo(qubo,num_reads=num_samples)
+            response = sampler.sample_qubo(qubo)
             solutions = pd.DataFrame(response.data())
             # print(solutions.head())
             #get mininum energy solution
