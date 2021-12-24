@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import scipy as sci
+import time
 import symengine as se
 import dimod, itertools
 from openfermion.linalg import get_sparse_operator
@@ -61,7 +62,7 @@ def minimize_expr(expr, angle_folds, amplitude_folds, sampler, max_cycles=5, num
     #minimize expression
     min_energies, cycle = [], 0
     for cycle in range(max_cycles):
-        
+    iter_start_time = time.time()    
         #minimize continuous variables for fixed discrete variables
         cont_expr = expr
         for i in range(len(disc_vars)):
@@ -88,6 +89,7 @@ def minimize_expr(expr, angle_folds, amplitude_folds, sampler, max_cycles=5, num
         #run sampler
         # response = sampler.sample_qubo(qubo,num_reads=num_samples)
         response = sampler.sample_qubo(qubo)
+        # print(response)
         solutions = pd.DataFrame(response.data())
         # print(solutions.head())
         minIndex = int(solutions[['energy']].idxmin())
@@ -101,6 +103,7 @@ def minimize_expr(expr, angle_folds, amplitude_folds, sampler, max_cycles=5, num
                 continue
             disc_vals[index] = 2*unredSolution[key]-1
         min_energies += [minEnergy]
+        iter_times += [time.time() - iter_start_time]
         
         all_disc_vals += [disc_vals]
         all_cont_vals += [cont_vals]
@@ -113,7 +116,7 @@ def minimize_expr(expr, angle_folds, amplitude_folds, sampler, max_cycles=5, num
     cont_dict = dict(zip(cont_vars, all_cont_vals[index]))
     disc_dict = dict(zip(disc_vars, all_disc_vals[index]))
     
-    return min_energy, cont_dict, disc_dict, min_energies
+    return min_energy, cont_dict, disc_dict, min_energies, iter_times
 
 
 
