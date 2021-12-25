@@ -62,7 +62,7 @@ def minimize_expr(expr, angle_folds, amplitude_folds, sampler, max_cycles=5, num
     #minimize expression
     min_energies, cycle = [], 0
     for cycle in range(max_cycles):
-    iter_start_time = time.time()    
+        iter_start_time = time.time()    
         #minimize continuous variables for fixed discrete variables
         cont_expr = expr
         for i in range(len(disc_vars)):
@@ -126,7 +126,7 @@ def QMF(qubit_H, angle_folds, sampler, num_cycles=5, num_samples=1000, strength=
     n = count_qubits(qubit_H)
     expr = qubit_op_to_expr(qubit_H, angle_folds=angle_folds)
     
-    QMF_energy, cont_dict, disc_dict = minimize_expr(expr, angle_folds, 0, sampler,
+    QMF_energy, cont_dict, disc_dict, iter_times = minimize_expr(expr, angle_folds, 0, sampler,
         max_cycles=num_cycles, num_samples=num_samples, strength=strength, verbose=verbose)
 
 
@@ -207,7 +207,7 @@ def QCC(qubit_H, entanglers, angle_folds, amplitude_folds, sampler,
 
 
     #minimize QCC expression
-    QCC_energy, cont_dict, disc_dict, min_energies = minimize_expr(expr, angle_folds, amplitude_folds, sampler,
+    QCC_energy, cont_dict, disc_dict, min_energies, iter_times = minimize_expr(expr, angle_folds, amplitude_folds, sampler,
         max_cycles=num_cycles, num_samples=num_samples, strength=strength, verbose=verbose)
 
 
@@ -255,4 +255,4 @@ def QCC(qubit_H, entanglers, angle_folds, amplitude_folds, sampler,
                 except KeyError:
                     pass
     
-    return QCC_energy, cont_dict, min_energies
+    return QCC_energy, cont_dict, min_energies, iter_times
