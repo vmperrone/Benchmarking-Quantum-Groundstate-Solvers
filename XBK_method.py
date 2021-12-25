@@ -2,7 +2,7 @@ import pandas as pd
 import dimod, math, itertools
 from openfermion.ops import QubitOperator
 from openfermion.utils import count_qubits
-
+import time
 from helper_functions import *
 
 
@@ -96,7 +96,7 @@ def XBK(qubit_Hs, qubit_Cs, r, sampler, starting_lam=0, num_samples=1000, streng
     
     n = count_qubits(qubit_Hs[0])
     min_energies, ground_states = [],[]
-    
+    iter_times = []
     for p in range(int(math.ceil(r/2+1))):
         qubit_H, qubit_C = qubit_Hs[p], qubit_Cs[p]
         
@@ -110,7 +110,9 @@ def XBK(qubit_Hs, qubit_Cs, r, sampler, starting_lam=0, num_samples=1000, streng
         eigenvalue = min_energy = -1
         ground_state = []
         cycles = 0
+        
         while min_energy < 0 and cycles < 10:
+            start_time = time.time()
             #subtract lambda C from H
             H_prime = qubit_H - lam*qubit_C
             # print(H_prime)
@@ -165,7 +167,7 @@ def XBK(qubit_Hs, qubit_Cs, r, sampler, starting_lam=0, num_samples=1000, streng
         
         min_energies += [round(lam, 14)]
         ground_states += [ground_state]
-        
+        iter_times += [time.time() - start_time]
         if verbose:
             print('P:', p, 'E:', round(lam, 5))
         
@@ -176,4 +178,4 @@ def XBK(qubit_Hs, qubit_Cs, r, sampler, starting_lam=0, num_samples=1000, streng
     if verbose:
         print('Energy:', round(min_energy, 5))
     
-    return min_energy, ground_state, min_energies
+    return min_energy, ground_state, min_energies, iter_times
