@@ -85,11 +85,11 @@ def minimize_expr(expr, angle_folds, amplitude_folds, sampler, max_cycles=5, num
         bqm = dimod.higherorder.utils.make_quadratic(expr_to_dict(disc_expr), strength, dimod.SPIN)
         # print(bqm)
         qubo, constant = bqm.to_qubo()
-        # print(qubo)
+        print(qubo, type(qubo), qubo.keys(), qubo.values(), type(qubo.keys()), type(qubo.values())
         
         #run sampler
-        response = sampler.sample_qubo(qubo,num_reads=num_samples)
-        # response = sampler.sample_qubo(qubo)
+        # response = sampler.sample_qubo(qubo,num_reads=num_samples)
+        response = sampler.sample(qubo)
         print(response)
         solutions = pd.DataFrame(response.data())
         print(solutions.head())
