@@ -28,4 +28,5 @@ Each method outputs a convergence plot of the groundstate energy calculated in e
 
 #### References
 [1] Xia, Rongxin, Teng Bian, and Sabre Kais. "Electronic structure calculations and the Ising Hamiltonian." The Journal of Physical Chemistry B 122.13 (2017): 3384-3395.
+
 [2] J. Copenhaver, A. Wasserman, and B. Wehefritz-Kaufmann. “Using Quantum Annealers to Calculate Ground State Properties of Molecules,” (2020), arXiv:2009.10779v2 [quant-ph].
