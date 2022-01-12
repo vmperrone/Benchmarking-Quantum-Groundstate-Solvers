@@ -10,6 +10,12 @@ Open the BenchmarkingTool.ipynb file and follow the prompts. The file can be ope
 #### Benchmarking Tool Workflow
 After setting up the notebook and installing the required packages, the notebook will progress to select and load a molecule using the PYSCF Driver and qiskit-nature tools. This will be the molecule subject to the various quantum groundstate solvers to be benchmarked. As the notebook progresses the methods described in the digrams below will be benchmarked.
 
-![Alt text](Workflow1.png?raw=true "Title")
+Qiskit and OpenFermion libraries are used to create a Fermionic Operator to represent the second quantization of the electronic hamiltonian. The Fermionic Operator is then mapped to a Qubit Operator in order to be solvable using quantum computing methods. The methods used are outlined in the diagram below.
 
-![Alt text](Workflow2.png?raw=true "Title")
+![Alt text](https://github.com/kkhendry/Benchmarking-Quantum-Groundstate-Solvers/blob/master/Workflow1.PNG?raw=true "Title")
+
+Where the XBK and QCC methods within the Ising Form aproach are mapped according to the high level diagram below.
+
+![Alt text](https://github.com/kkhendry/Benchmarking-Quantum-Groundstate-Solvers/blob/master/Workflow2.PNG?raw=true "Title")
+
+Each method outputs a convergence plot of the groundstate energy calculated in each iteration of the respective algorithm as well as a dictonary containing the method used, the associated method parameters, the groundstate energy found and the running time.
