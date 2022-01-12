@@ -9,3 +9,7 @@ Open the BenchmarkingTool.ipynb file and follow the prompts. The file can be ope
 
 #### Benchmarking Tool Workflow
 After setting up the notebook and installing the required packages, the notebook will progress to select and load a molecule using the PYSCF Driver and qiskit-nature tools. This will be the molecule subject to the various quantum groundstate solvers to be benchmarked. As the notebook progresses the methods described in the digrams below will be benchmarked.
+
+![Alt text](Workflow1.png?raw=true "Title")
+
+![Alt text](Workflow2.png?raw=true "Title")
