@@ -14,7 +14,7 @@ Qiskit and OpenFermion libraries are used to create a Fermionic Operator to repr
 
 ![Alt text](https://github.com/kkhendry/Benchmarking-Quantum-Groundstate-Solvers/blob/master/Workflow1.PNG?raw=true "Title")
 
-Where the XBK and QCC methods within the Ising Form aproach are mapped according to the high level diagram below.
+Where the XBK and QCC methods within the Ising Form aproach are mapped according to the high level diagram below. XBK and QCC and re-implementations of the approaches detailed in [1] and [2].
 
 ![Alt text](https://github.com/kkhendry/Benchmarking-Quantum-Groundstate-Solvers/blob/master/Workflow2.PNG?raw=true "Title")
 
