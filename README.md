@@ -3,3 +3,9 @@
 
 #### Abstract
 Several methods for performing computational chemistry have been developed to leverage quantum computers and algorithms. In the NISQ (Noisy Intermediate Scale Quantum) device era, several variational algorithms are being researched to find the solution from ground state energies of molecules. This project aims to investigate, benchmark and combine these algorithms across universal gate-controlled quantum devices and quantum annealer devices to make progress towards simulating large molecules.
+
+#### How to use this repo
+Open the BenchmarkingTool.ipynb file and follow the prompts. The file can be opened in Google Colab (recommended) or in a remote VS Code environment by following the applicable prompts in the notebook (requires user to have an ngrok account to host a remote environment). The VS Code environment allows the user to perform more advanced work by allowing users to directly access supporting python files such as helper.py, utilities.py, XBK.py and QCC.py. Instructions for both the Google Colab and VS Code options are enclosed in the notebook file. Prompts to install all the required packages are also enclosed within the notebook file.
+
+#### Benchmarking Tool Workflow
+After setting up the notebook and installing the required packages, the notebook will progress to select and load a molecule using the PYSCF Driver and qiskit-nature tools. This will be the molecule subject to the various quantum groundstate solvers to be benchmarked. As the notebook progresses the methods described in the digrams below will be benchmarked.
