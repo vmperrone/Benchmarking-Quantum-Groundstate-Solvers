@@ -12,11 +12,11 @@ After setting up the notebook and installing the required packages, the notebook
 
 Qiskit and OpenFermion libraries are used to create a Fermionic Operator to represent the second quantization of the electronic hamiltonian. The Fermionic Operator is then mapped to a Qubit Operator in order to be solvable using quantum computing methods. The methods used are outlined in the diagram below.
 
-![Alt text](https://github.com/kkhendry/Benchmarking-Quantum-Groundstate-Solvers/blob/master/Workflow1.PNG?raw=true "Title")
+![Alt text](https://github.com/kkhendry/Benchmarking-Quantum-Groundstate-Solvers/main/img/blob/master/Workflow1.PNG?raw=true "Title")
 
 Where the XBK and QCC methods within the Ising Form aproach are mapped according to the high level diagram below. XBK and QCC and re-implementations of the approaches detailed in [1] and [2].
 
-![Alt text](https://github.com/kkhendry/Benchmarking-Quantum-Groundstate-Solvers/blob/master/Workflow2.PNG?raw=true "Title")
+![Alt text](https://github.com/kkhendry/Benchmarking-Quantum-Groundstate-Solvers/main/img/blob/master/Workflow2.PNG?raw=true "Title")
 
 Each method outputs a convergence plot of the groundstate energy calculated in each iteration of the respective algorithm as well as a dictonary containing the method used, the associated method parameters, the groundstate energy found and the running time.
 
