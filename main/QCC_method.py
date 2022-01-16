@@ -88,7 +88,7 @@ def minimize_expr(expr, angle_folds, amplitude_folds, sampler, max_cycles=5, num
         
         #run sampler
         # response = sampler.sample_qubo(qubo,num_reads=num_samples)
-        response = sampler.sample(qubo)
+        response = sampler.sample_qubo(qubo)
         # print(response)
         solutions = pd.DataFrame(response.data())
         # print(solutions.head())
@@ -205,7 +205,7 @@ def QCC(qubit_H, entanglers, angle_folds, amplitude_folds, sampler,
         term = qubit_op_to_expr(term, angle_folds=angle_folds)
         expr += coeff*term
 
-    print(expr)
+    # print(expr)
     #minimize QCC expression
     QCC_energy, cont_dict, disc_dict, min_energies, iter_times = minimize_expr(expr, angle_folds, amplitude_folds, sampler,
         max_cycles=num_cycles, num_samples=num_samples, strength=strength, verbose=verbose)
