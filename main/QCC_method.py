@@ -89,9 +89,9 @@ def minimize_expr(expr, angle_folds, amplitude_folds, sampler, max_cycles=5, num
         #run sampler
         # response = sampler.sample_qubo(qubo,num_reads=num_samples)
         response = sampler.sample(qubo)
-        print(response)
+        # print(response)
         solutions = pd.DataFrame(response.data())
-        print(solutions.head())
+        # print(solutions.head())
         minIndex = int(solutions[['energy']].idxmin())
         minEnergy = round(solutions['energy'][minIndex],12) + constant
         unredSolution = solutions['sample'][minIndex]
