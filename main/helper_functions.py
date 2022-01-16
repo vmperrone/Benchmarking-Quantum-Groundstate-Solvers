@@ -338,7 +338,7 @@ def expr_to_dict(expr):
         except RuntimeError:
             coeff = 1
         
-        dictionary[variables] = coeff
+        dictionary[str(variables)] = coeff
     return dictionary
 
 
