@@ -5,7 +5,22 @@
 Several methods for performing computational chemistry have been developed to leverage quantum computers and algorithms. In the NISQ (Noisy Intermediate Scale Quantum) device era, several variational algorithms are being researched to find the solution from ground state energies of molecules. This project aims to investigate, benchmark and combine these algorithms across universal gate-controlled quantum devices and quantum annealer devices to make progress towards simulating large molecules.
 
 #### How to use this repo
-Open the BenchmarkingTool.ipynb file and follow the prompts. The file can be opened in Google Colab (recommended) or in a remote VS Code environment by following the applicable prompts in the notebook (requires user to have an ngrok account to host a remote environment). The VS Code environment allows the user to perform more advanced work by allowing users to directly access supporting python files such as helper.py, utilities.py, XBK.py and QCC.py. Instructions for both the Google Colab and VS Code options are enclosed in the notebook file. Prompts to install all the required packages are also enclosed within the notebook file.
+There are two ways to work with this repo:
+1. Google Colab - This is the easiest option but the least powerful. You may run the notebook and view the results inline - but you will not have the ability to save your results to the databse or edit the supporting files (helper.py, utilities.py, XBK.py and QCC.py).
+2. Remote VS Code Editor - This option gives you full access to the repo directory and it's associated files. You will be able to run experiments, update the results database and modify the supporting files (helper.py, utilities.py, XBK.py and QCC.py). However, in order or this option to work, you will need to set up an ngrok authentication token by signing up for an ngrok account at www. as instructed in cell 2 of the notebook.
+
+Regardless of the the option you choose you will start by opening main\BenchmarkingTool.ipynb in Google Colab and follow the prompts within the notebook. Below is a brief overview of how it is laid out.
+
+##### Google Colab
+1. Ignore cell 1 and 2.
+2. Clone the repo using cell 3.
+3. Continue to follow the notebook from cell 4 onwards.
+Note: To keep a clean interface, you may uncomment out the %%capture line in cell 3 and 4 to hide the output in google colab.
+
+##### Remote VS Code Editor
+1. Run cell 1, be sure to set up your own ngrok account and obtain your own ngrok token at www. It's free. Input your authentication token into cell 1 as indicated in a comment.
+2. Run cell 2. Click the first link in the first line of the output to open the remote server.
+3. Clone this repo in the VS Code editor.
 
 #### Benchmarking Tool Workflow
 After setting up the notebook and installing the required packages, the notebook will progress to select and load a molecule using the PYSCF Driver and qiskit-nature tools. This will be the molecule subject to the various quantum groundstate solvers to be benchmarked. As the notebook progresses the methods described in the digrams below will be benchmarked.
