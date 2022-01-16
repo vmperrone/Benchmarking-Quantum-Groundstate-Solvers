@@ -7,9 +7,9 @@ Several methods for performing computational chemistry have been developed to le
 #### How to use this repo
 There are two ways to work with this repo:
 1. Google Colab - This is the easiest option but the least powerful. You may run the notebook and view the results inline - but you will not have the ability to save your results to the databse or edit the supporting files (helper.py, utilities.py, XBK.py and QCC.py).
-2. Remote VS Code Editor - This option gives you full access to the repo directory and it's associated files. You will be able to run experiments, update the results database and modify the supporting files (helper.py, utilities.py, XBK.py and QCC.py). However, in order or this option to work, you will need to set up an ngrok authentication token by signing up for an ngrok account at www. as instructed in cell 2 of the notebook.
+2. Remote VS Code Editor - This option gives you full access to the repo directory and it's associated files. You will be able to run experiments, update the results database and modify the supporting files (helper.py, utilities.py, XBK.py and QCC.py). However, in order or this option to work, you will need to set up an ngrok authentication token by signing up for an ngrok account at https://ngrok.com/ as instructed in cell 2 of the notebook.
 
-Regardless of the the option you choose you will start by opening main\BenchmarkingTool.ipynb in Google Colab and follow the prompts within the notebook. Below is a brief overview of how it is laid out.
+Regardless of the the option you choose you will start by opening main\BenchmarkingTool.ipynb in Google Colab and follow the prompts within the notebook. Below is a brief overview of how it is laid out. These instructions are provided in the notebook when required for execution.
 
 ##### Google Colab
 1. Ignore cell 1 and 2.
@@ -18,9 +18,12 @@ Regardless of the the option you choose you will start by opening main\Benchmark
 Note: To keep a clean interface, you may uncomment out the %%capture line in cell 3 and 4 to hide the output in google colab.
 
 ##### Remote VS Code Editor
-1. Run cell 1, be sure to set up your own ngrok account and obtain your own ngrok token at www. It's free. Input your authentication token into cell 1 as indicated in a comment.
+1. Run cell 1, be sure to set up your own ngrok account and obtain your own ngrok token at https://ngrok.com/. It's free. Input your authentication token into cell 1 as indicated in a comment.
 2. Run cell 2. Click the first link in the first line of the output to open the remote server.
 3. Clone this repo in the VS Code editor.
+
+##### Other Pre-requisites
+In order to run the notebook experiements on real quantum device backends, you will need an IBM Quantum account and API authentication token to run VQE (and future QAOA) experiments (https://quantum-computing.ibm.com/) and a D-Wave Systems account and API authentication token (https://cloud.dwavesys.com/leap/login/?next=/leap/). Please use your own tokens as it would be unethical to use mine.
 
 #### Benchmarking Tool Workflow
 After setting up the notebook and installing the required packages, the notebook will progress to select and load a molecule using the PYSCF Driver and qiskit-nature tools. This will be the molecule subject to the various quantum groundstate solvers to be benchmarked. As the notebook progresses the methods described in the digrams below will be benchmarked.
