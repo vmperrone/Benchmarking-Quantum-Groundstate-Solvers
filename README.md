@@ -20,7 +20,8 @@ Note: To keep a clean interface, you may uncomment out the %%capture line in cel
 ##### Remote VS Code Editor
 1. Run cell 1, be sure to set up your own ngrok account and obtain your own ngrok token at https://ngrok.com/. It's free. Input your authentication token into cell 1 as indicated in a comment.
 2. Run cell 2. Click the first link in the first line of the output to open the remote server.
-3. Clone and open this repo to the /root directory in the VS Code editor. (Be patient while extensions load to allow you to clone repos and run jupyter notebooks. You can monitor the progress on the bar at the bottom).
+3. Clone and open this repo to the /root directory in the VS Code editor.
+Note: Things may not work the first time you click them as they require extensions. Be patient while extensions load to allow you to clone repos and run jupyter notebooks. You can monitor the progress on the bar at the bottom.
 
 ##### Other Pre-requisites
 In order to run the notebook experiements on real quantum device backends, you will need an IBM Quantum account and API authentication token to run VQE (and future QAOA) experiments (https://quantum-computing.ibm.com/) and a D-Wave Systems account and API authentication token (https://cloud.dwavesys.com/leap/login/?next=/leap/). Please use your own tokens as it would be unethical to use mine.
@@ -39,7 +40,7 @@ Where the XBK and QCC methods within the Ising Form aproach are mapped according
 Each method outputs a convergence plot of the groundstate energy calculated in each iteration of the respective algorithm as well as a dictonary containing the method used, the associated method parameters, the groundstate energy found and the running time.
 
 #### Benchmarking Results
-[To be added]
+![Alt text](https://github.com/kkhendry/Benchmarking-Quantum-Groundstate-Solvers/blob/master/main/img/Results.PNG?raw=true "Title")
 
 #### Other Relevant Repos
 [To be added]
