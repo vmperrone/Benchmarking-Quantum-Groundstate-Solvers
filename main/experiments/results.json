@@ -65,6 +65,72 @@
             "mapping": "JordanWignerMapper"
         }
     },
+    "H2_[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]_sto6g_QCC_LeapHybridSampler ": {
+        "# of evaluations": 10,
+        "# of qubits": 4,
+        "accuracy (%)": 81.02134134009005,
+        "backend": "LeapHybridSampler ",
+        "basis": "sto6g",
+        "error (mHa)": 0.35338694232749,
+        "exact energy": -1.8620227522926889,
+        "final parameters": "{phi0: 1.511113415759232, phi1: 6.283185307179586, phi2: 6.283185307179586, phi3: 6.245241384584397, the0: 3.141578933062649, the1: 1.5477256243570487, the2: 1.7006754268421442, the3: 1.5707963267948966, tau0: 4.7175772399103195, tau1: 5.3242314814483915, tau2: 4.578296138152547, tau3: 2.2055088426937286}",
+        "geometry": "[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]",
+        "method": "QCC",
+        "min energies": [
+            -1.5086358099651989,
+            -1.5086358099651989,
+            -1.5079033880901989,
+            -1.5086358099651989,
+            -1.5086358099651989,
+            -1.5086358099651989,
+            -1.5079033880901989,
+            -1.5079033880901989,
+            -1.5086358099651989,
+            -1.5086358099651989
+        ],
+        "molecule": "H2",
+        "result energy (Ha)": -1.5086358099651989,
+        "runtime": 72.94186663627625,
+        "setup": {
+            "amplitude_folds": 1,
+            "angle_folds": 4,
+            "entanglers": "{'IYZI': 1.0 [Y1 Z2], 'IZYI': 1.0 [Z1 Y2], 'IXYI': 1.0 [X1 Y2], 'IYXI': 1.0 [Y1 X2]}",
+            "mapping": "JordanWignerMapper"
+        }
+    },
+    "H2_[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]_sto6g_QCC_SimulatedAnnealingSampler ": {
+        "# of evaluations": 10,
+        "# of qubits": 4,
+        "accuracy (%)": 79.2955002745502,
+        "backend": "SimulatedAnnealingSampler ",
+        "basis": "sto6g",
+        "error (mHa)": 0.3855224956362526,
+        "exact energy": -1.8620227522926889,
+        "final parameters": "{phi0: 0.2942922831505221, phi1: 6.283185307179586, phi2: 1.4472730914863348, phi3: 5.576960656411072, the0: 3.141592653589793, the1: 1.2711824777428464, the2: 3.141592653589793, the3: 1.5707963267948966, tau0: 5.0120033347920305, tau1: 6.283185307179586, tau2: 3.141592653589793, tau3: 3.141592653589793}",
+        "geometry": "[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]",
+        "method": "QCC",
+        "min energies": [
+            1.5070099502627272,
+            -1.1506317253224552,
+            0.4998975718044676,
+            -0.8278188692202093,
+            0.45986389491008595,
+            -0.2505852725735167,
+            -0.5465536421979778,
+            -0.13194259739248082,
+            -0.13194259739248082,
+            -1.4765002566564362
+        ],
+        "molecule": "H2",
+        "result energy (Ha)": -1.4765002566564362,
+        "runtime": 0.37133121490478516,
+        "setup": {
+            "amplitude_folds": 1,
+            "angle_folds": 4,
+            "entanglers": "{'IYZI': 1.0 [Y1 Z2], 'IZYI': 1.0 [Z1 Y2], 'IXYI': 1.0 [X1 Y2], 'IYXI': 1.0 [Y1 X2]}",
+            "mapping": "JordanWignerMapper"
+        }
+    },
     "H2_[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]_sto6g_VQE_ibmq_qasm_simulator": {
         "# of evaluations": 43,
         "# of qubits": 4,
@@ -230,6 +296,54 @@
             "r": 4
         }
     },
+    "H2_[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]_sto6g_XBK_<neal.sampler.SimulatedAnnealingSamplerobjectat0x7f22fce1f410>": {
+        "# of evaluations": 3,
+        "# of qubits": 4,
+        "accuracy (mHa)": 0.9685298166598689,
+        "backend": "<neal.sampler.SimulatedAnnealingSamplerobjectat0x7f22fce1f410>",
+        "basis": "sto6g",
+        "error (%)": 47.98507078029372,
+        "exact energy": -1.8620227522926889,
+        "final parameters": "N/A",
+        "geometry": "[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]",
+        "method": "XBK",
+        "min energies": [
+            0,
+            0,
+            -0.89349293563282
+        ],
+        "molecule": "H2",
+        "result energy (Ha)": -0.89349293563282,
+        "runtime": 0.24541735649108887,
+        "setup": {
+            "mapping": "JordanWignerMapper",
+            "r": 4
+        }
+    },
+    "H2_[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]_sto6g_XBK_<neal.sampler.SimulatedAnnealingSamplerobjectat0x7f22fcef2b90>": {
+        "# of evaluations": 3,
+        "# of qubits": 4,
+        "accuracy (mHa)": 0.6539811222767489,
+        "backend": "<neal.sampler.SimulatedAnnealingSamplerobjectat0x7f22fcef2b90>",
+        "basis": "sto6g",
+        "error (%)": 64.87791991416276,
+        "exact energy": -1.8620227522926889,
+        "final parameters": "N/A",
+        "geometry": "[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]",
+        "method": "XBK",
+        "min energies": [
+            -0.76319024563418,
+            -1.18772801966406,
+            -1.20804163001594
+        ],
+        "molecule": "H2",
+        "result energy (Ha)": -1.20804163001594,
+        "runtime": 0.23617935180664062,
+        "setup": {
+            "mapping": "JordanWignerMapper",
+            "r": 4
+        }
+    },
     "H2_[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]_sto6g_XBK_<neal.sampler.SimulatedAnnealingSamplerobjectat0x7f22fd25c650>": {
         "# of evaluations": 3,
         "# of qubits": 4,
@@ -249,6 +363,54 @@
         "molecule": "H2",
         "result energy (Ha)": -1.0742658359668,
         "runtime": 0.2416243553161621,
+        "setup": {
+            "mapping": "JordanWignerMapper",
+            "r": 4
+        }
+    },
+    "H2_[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]_sto6g_XBK_LeapHybridSampler ": {
+        "# of evaluations": 3,
+        "# of qubits": 4,
+        "accuracy (mHa)": 0.01960245391062898,
+        "backend": "LeapHybridSampler ",
+        "basis": "sto6g",
+        "error (%)": 98.94724949593163,
+        "exact energy": -1.8620227522926889,
+        "final parameters": "N/A",
+        "geometry": "[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]",
+        "method": "XBK",
+        "min energies": [
+            -1.64644295169079,
+            -1.84242029838206,
+            -1.61877440563209
+        ],
+        "molecule": "H2",
+        "result energy (Ha)": -1.84242029838206,
+        "runtime": 22.623193740844727,
+        "setup": {
+            "mapping": "JordanWignerMapper",
+            "r": 4
+        }
+    },
+    "H2_[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]_sto6g_XBK_SimulatedAnnealingSampler ": {
+        "# of evaluations": 3,
+        "# of qubits": 4,
+        "accuracy (mHa)": 0.8092276830975189,
+        "backend": "SimulatedAnnealingSampler ",
+        "basis": "sto6g",
+        "error (%)": 56.54039768842108,
+        "exact energy": -1.8620227522926889,
+        "final parameters": "N/A",
+        "geometry": "[['H',[0.0,0.0,0.0]],['H',[0.0,0.0,0.739]]]",
+        "method": "XBK",
+        "min energies": [
+            -0.7075529837651,
+            -1.0168551196839,
+            -1.05279506919517
+        ],
+        "molecule": "H2",
+        "result energy (Ha)": -1.05279506919517,
+        "runtime": 0.24187660217285156,
         "setup": {
             "mapping": "JordanWignerMapper",
             "r": 4
