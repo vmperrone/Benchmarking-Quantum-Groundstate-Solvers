@@ -48,9 +48,16 @@ Some prelimnary results are shown in the table below:
 The code for the QCC_method and the XBK_method is from https://github.com/jcopenh/Quantum-Chemistry-with-Annealers with reference to [2].
 
 #### References
-[1] Xia, Rongxin, Teng Bian, and Sabre Kais. "Electronic structure calculations and the Ising Hamiltonian." The Journal of Physical Chemistry B 122.13 (2017): 3384-3395. https://pubs.acs.org/doi/10.1021/acs.jpcb.7b10371
+[1] Xia, Rongxin, Teng Bian, and Sabre Kais. "Electronic structure calculations and the Ising Hamiltonian." The Journal of Physical Chemistry B 122.13 (2017): 3384-3395. 
+
+https://pubs.acs.org/doi/10.1021/acs.jpcb.7b10371
+
 arXiv:1706.00271
 
-[2] J. Copenhaver, A. Wasserman, and B. Wehefritz-Kaufmann. “Using Quantum Annealers to Calculate Ground State Properties of Molecules,” (2020), arXiv:2009.10779v2 [quant-ph]. doi:10.1063/5.0030397
+[2] J. Copenhaver, A. Wasserman, and B. Wehefritz-Kaufmann. “Using Quantum Annealers to Calculate Ground State Properties of Molecules,” (2020), arXiv:2009.10779v2 [quant-ph]. 
+
+doi:10.1063/5.0030397
+
 arXiv:2009.10779
+
 https://github.com/jcopenh/Quantum-Chemistry-with-Annealers
