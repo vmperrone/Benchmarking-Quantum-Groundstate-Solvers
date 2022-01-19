@@ -6,8 +6,10 @@ Several methods for performing computational chemistry have been developed to le
 
 #### How to use this repo
 There are two ways to work with this repo:
-1. Google Colab - This is the easiest option but the least powerful. You may run the notebook and view the results inline - but you will not have the ability to save your results to the databse or edit the supporting files (helper.py, utilities.py, XBK.py and QCC.py).
-2. Remote VS Code Editor - This option gives you full access to the repo directory and it's associated files. You will be able to run experiments, update the results database and modify the supporting files (helper.py, utilities.py, XBK.py and QCC.py). However, in order or this option to work, you will need to set up an ngrok authentication token by signing up for an ngrok account at https://ngrok.com/ as instructed in cell 2 of the notebook.
+
+**1. Google Colab** - This is the easiest option but the least powerful. You may run the notebook and view the results inline - but you will not have the ability to save your results to the databse or edit the supporting files (helper.py, utilities.py, XBK.py and QCC.py).
+
+**2. Remote VS Code Editor** - This option gives you full access to the repo directory and it's associated files. You will be able to run experiments, update the results database and modify the supporting files (helper.py, utilities.py, XBK_method.py and QCC_method.py). However, in order or this option to work, you will need to set up an ngrok authentication token by signing up for an ngrok account at https://ngrok.com/ as instructed in cell 2 of the notebook.
 
 Regardless of the the option you choose you will start by opening main\BenchmarkingTool.ipynb in Google Colab and follow the prompts within the notebook. Below is a brief overview of how it is laid out. These instructions are provided in the notebook when required for execution.
 
@@ -45,11 +47,19 @@ Some prelimnary results are shown in the table below:
 ![Alt text](https://github.com/kkhendry/Benchmarking-Quantum-Groundstate-Solvers/blob/master/main/img/Results.PNG?raw=true "Title")
 
 #### Other Relevant Repos
-[To be added]
+The code for the QCC_method and the XBK_method is from https://github.com/jcopenh/Quantum-Chemistry-with-Annealers with reference to [2].
 
 #### References
-[1] Xia, Rongxin, Teng Bian, and Sabre Kais. "Electronic structure calculations and the Ising Hamiltonian." The Journal of Physical Chemistry B 122.13 (2017): 3384-3395.
+**[1]** Xia, Rongxin, Teng Bian, and Sabre Kais. "Electronic structure calculations and the Ising Hamiltonian." The Journal of Physical Chemistry B 122.13 (2017): 3384-3395. 
 
-[2] J. Copenhaver, A. Wasserman, and B. Wehefritz-Kaufmann. “Using Quantum Annealers to Calculate Ground State Properties of Molecules,” (2020), arXiv:2009.10779v2 [quant-ph].
+https://pubs.acs.org/doi/10.1021/acs.jpcb.7b10371
 
-[ADD REFERENCE FOR CODE PROVIDED BY AUTHOR]
+arXiv:1706.00271
+
+**[2]** J. Copenhaver, A. Wasserman, and B. Wehefritz-Kaufmann. “Using Quantum Annealers to Calculate Ground State Properties of Molecules,” (2020), arXiv:2009.10779v2 [quant-ph]. 
+
+doi:10.1063/5.0030397
+
+arXiv:2009.10779
+
+https://github.com/jcopenh/Quantum-Chemistry-with-Annealers
